@@ -1,0 +1,154 @@
+# Build directories
+build/
+dist/
+bin/
+
+# Go build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test coverage files
+coverage.out
+coverage.html
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Local configuration files
+config.yaml
+config.yml
+*.local.*
+
+# Dependency directories
+vendor/
+
+# Go module cache
+*.modcache/
+
+# Node modules (if any)
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# SSH keys and certificates
+*.pem
+*.key
+*.crt
+*.p12
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Archive files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Mount Exporter specific
+# OpenSpec directory and all its contents
+openspec/
+
+# CI/CD
+.github/workflows/backup/
+.github/workflows/temp/
+
+# Docker
+.dockerignore
+
+# Documentation build artifacts
+docs/_build/
+docs/.doctrees/
+
+# Editor backups
+*.orig
+*.rej
+~*
+
+# Profiling data
+*.prof
+*.pprof
+
+# Core dumps
+core
+core.*
+
+# Debug files
+debug
+debug.*
+
+# Local development
+.local/
+dev/
+
+# Test outputs
+test-results/
+test-reports/
+
+# Backup files
+*.backup
+*.old
+*.prev
+
+# Package files
+*.deb
+*.rpm
+*.dmg
+*.pkg
+
+# Release files
+release-*
+releases/
+
+# Monitoring and tracing
+*.trace
+*.jaeger
+
+# Local scripts
+scripts/local-*
+scripts/dev-*
+
+# Temporary mount points for testing
+/tmp/test-mount-*
+/mnt/test-*
+
+# System service files (keep examples)
+*.service
+*.timer
+systemd/
+/etc/systemd/system/mount-exporter.*
+
+# Keep example configurations but exclude local overrides
+examples/config.local.yaml
+examples/config.dev.yaml
+examples/config.prod.yaml

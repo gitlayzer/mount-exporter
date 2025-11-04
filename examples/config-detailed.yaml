@@ -1,0 +1,115 @@
+# Mount Exporter - Detailed Configuration Example
+# This file demonstrates all available configuration options
+
+# Server configuration section
+server:
+  # Network interface to bind to
+  # Use "0.0.0.0" to bind to all interfaces
+  # Use "127.0.0.1" to bind to localhost only
+  host: "0.0.0.0"
+
+  # Port number for the HTTP server
+  # Must be between 1 and 65535
+  port: 8080
+
+  # Path for the Prometheus metrics endpoint
+  # Must start with "/"
+  path: "/metrics"
+
+# List of mount points to monitor
+# All mount points should be absolute paths (starting with "/")
+mount_points:
+  # Critical system directories
+  - "/"
+  - "/boot"
+  - "/usr"
+  - "/var"
+
+  # Application data directories
+  - "/data"
+  - "/var/log"
+  - "/var/lib"
+
+  # External storage
+  - "/mnt/data"
+  - "/mnt/backups"
+  - "/mnt/media"
+
+  # User directories
+  - "/home"
+  - "/home/user1"
+  - "/home/user2"
+
+  # Database directories
+  - "/var/lib/postgresql"
+  - "/var/lib/mysql"
+  - "/opt/oracle"
+
+  # Temporary directories
+  - "/tmp"
+  - "/var/tmp"
+
+# Collection interval for checking mount points
+# Use Go duration format: 30s, 1m, 5m, 1h, etc.
+interval: 30s
+
+# Logging configuration
+logging:
+  # Log level controls verbosity
+  # Available levels: debug, info, warn, error, fatal
+  # debug: Most verbose, includes all details
+  # info: Normal operational messages
+  # warn: Warning messages
+  # error: Error messages only
+  # fatal: Fatal errors that cause the application to exit
+  level: "info"
+
+  # Log format determines output format
+  # json: Structured JSON logging (recommended for production)
+  # text: Plain text logging (good for development)
+  format: "json"
+
+# Advanced configuration (commented out by default)
+# These settings are optional and can be omitted
+
+# Custom TLS configuration (if using HTTPS)
+#tls:
+#  enabled: false
+#  cert_file: "/path/to/cert.pem"
+#  key_file: "/path/to/key.pem"
+
+# Authentication for metrics endpoint (optional)
+# authentication:
+#  enabled: false
+#  username: "admin"
+#  password: "secretpassword"
+#  header_name: "X-Auth-Token"
+#  header_value: "your-auth-token"
+
+# Rate limiting (optional)
+# rate_limiting:
+#  enabled: false
+#  requests_per_minute: 60
+#  burst_size: 10
+
+# Metrics customization (optional)
+# metrics:
+#  prefix: "mount_exporter"
+#  disable_default_metrics: false
+#  custom_labels:
+#    environment: "production"
+#    datacenter: "us-east-1"
+
+# Performance tuning (optional)
+# performance:
+#  max_concurrent_checks: 10
+#  connection_timeout: 5s
+#  read_buffer_size: 4096
+
+# Notification settings (optional)
+# notifications:
+#  enabled: false
+#  webhook_url: "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK"
+#  on_mount_change: true
+#  on_error: true
+#  on_startup: true
